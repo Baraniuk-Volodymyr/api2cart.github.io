@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   function toggleView() {
     let isMobile = window.innerWidth <= 768;
@@ -25,5 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
       this.classList.add("active");
       contentItems[index].classList.add("visible");
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".rll-youtube-player").forEach(function (el) {
+      let button = el.querySelector(".play");
+      if (button) {
+          button.addEventListener("click", function () {
+              let videoSrc = el.getAttribute("data-src") + "?autoplay=1";
+              let iframe = document.createElement("iframe");
+              iframe.setAttribute("src", videoSrc);
+              iframe.setAttribute("allowfullscreen", "true");
+              iframe.setAttribute("width", "560");
+              iframe.setAttribute("height", "315");
+              el.innerHTML = "";
+              el.appendChild(iframe);
+          });
+      }
   });
 });
