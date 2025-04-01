@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", function () {
               let videoSrc = el.getAttribute("data-src") + "?autoplay=1";
               let iframe = document.createElement("iframe");
               iframe.setAttribute("src", videoSrc);
+              iframe.allow = "autoplay; encrypted-media";
               iframe.setAttribute("allowfullscreen", "true");
               iframe.setAttribute("width", "560");
               iframe.setAttribute("height", "315");
-              iframe.allow="autoplay; encrypted-media";
               el.innerHTML = "";
               el.appendChild(iframe);
           });
