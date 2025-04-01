@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
               iframe.setAttribute("allowfullscreen", "true");
               iframe.setAttribute("width", "560");
               iframe.setAttribute("height", "315");
+              iframe.allow="autoplay; encrypted-media";
               el.innerHTML = "";
               el.appendChild(iframe);
           });
